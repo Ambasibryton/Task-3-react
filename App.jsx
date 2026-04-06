@@ -1,34 +1,39 @@
-// React Challenge Task
-
 import { useState, useEffect } from "react";
-
-// TODO 1: Create Navbar component
-// TODO 2: Create Sidebar component
-// TODO 3: Create ProductCard component
-// TODO 4: Create Footer component
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 
 export default function App() {
-  // TODO 5: Create state for products
-  // TODO 6: Create state for cart
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  // TODO 7: Fetch products using useEffect
-  // Must display at least 8 items
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
-  // TODO 8: Create addToCart function
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
 
   return (
-    <div className="app">
-      {/* TODO 9: Add Navbar */}
-
-      <div className="layout">
-        {/* TODO 10: Add Sidebar */}
-
-        <main className="products">
-          {/* TODO 11: Map products here */}
-        </main>
+    <div>
+      <h1>E-Commerce React Challenge</h1>
+      <div className="app">
+        <Navbar cartCount={cart.length} />
+        <div className="layout">
+          <Sidebar />
+          <main className="products">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} addToCart={addToCart} />
+            ))}
+          </main>
+        </div>
+        <Footer />
       </div>
-
-      {/* TODO 12: Add Footer */}
     </div>
   );
 }
+

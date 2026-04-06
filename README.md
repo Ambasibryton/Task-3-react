@@ -1,91 +1,16 @@
-# Task-3-react
-# Responsive React Store Challenge
+# React + Vite
 
-## Objective
-Build a fully responsive e-commerce web application using:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- useState
-- useEffect
-- Props
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Core Functional Requirements
+## React Compiler
 
-1. Fetch products from:
-   https://fakestoreapi.com/products
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-2. Display at least **8 products** on the page.
+## Expanding the ESLint configuration
 
-3. Implement:
-   - Add to Cart button
-   - Cart counter
-   - (Bonus) Total price calculation
-
----
-
-## Layout & UI Requirements (MANDATORY)
-
-Your application must include:
-
-### 1. Webpage Title
-- A proper page title (e.g., "My React Store")
-
-### 2. Navigation Bar
-- Logo or site name
-- Navigation links (Home, Products, About, Contact)
-- Responsive menu (hamburger menu for mobile)
-
-### 3. Sidebar
-- Categories section
-- Must be visible on desktop
-- Must collapse or reposition on mobile
-
-### 4. Main Content
-- Display at least 8 products
-- Use grid layout
-
-### 5. Footer
-- Copyright text
-- Current year (must be dynamic)
-- Social media links (e.g., Facebook, Twitter, Instagram)
-
----
-
-## Responsive Requirements (Strict)
-
-Your layout must work correctly on:
-
-- 📱 Mobile (1 column layout)
-- 📲 Tablet (2 columns layout)
-- 💻 Desktop (3–4 columns layout)
-
-Use:
-- CSS Grid or Flexbox
-- Media queries
-
----
-
-## Technical Requirements
-
-- useEffect for fetching data
-- useState for managing products and cart
-- Props for passing data between components
-- Proper component structure
-- Clean folder organization
-
----
-
-## Bonus
-
-- Loading spinner
-- Error handling
-- Remove from cart
-- Sidebar toggle animation
-- Dark mode
-
----
-
-## Submission
-
-Push your completed solution to your own GitHub repository.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
